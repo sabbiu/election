@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VOTER REGISTRATION</title>
+</head>
+<body>
+
+<form action="{% url 'polls:voter'  %}" method="post">
+
+{% csrf_token %}
+Voter Id <input type="integer" name="voter_id">
+
+<br>
+
+Name:  <input type="text" name="name" />
+<br>
+Gender: <input type="radio" name="gender" value='M'>Male
+         <input type="radio" name="gender" value='F'>Female  
+<br>
+Spouse Name:  <input type="text" name="spousename" />
+<br>
+Father Name: <input type="text" name="fathername"/>
+<br>
+GrandFather Name: <input type="text" name="gfathername"/>
+<br>
+Mother Tongue: <input type="text" name="mothertongue"/>
+<br>
+Mobile:<input type="text" name="mobile"/>
+<br>
+Email: <input type="text" name="email"/>
+<br>
+Literacy Status <input type="radio" name="literacystatus" value="Y">Yes
+         <input type="radio" name="literacystatus" value="N">No
+<br> 
+Qualification <input type="text" name="qualification"/>
+<br>
+<br>
+Permanent Address
+<br>
+District           <input type="text" name="district">
+<br>
+VDC/Municipality            <input type="text" name="vdc_municipality">
+<br>
+Ward No <input type="integer" name="ward_no">
+<br>
+<br>
+ Disability  <input type="radio" name="disability" value="NULL">None
+         <input type="radio" name="disability" value="a">Visual Impaired
+          <input type="radio" name="disability" value="b">Hearing Impaired  
+ <input type="radio" name="disability" value="c">Speech Impaired
+         <input type="radio" name="disability" value="d">Amputee
+         <input type="radio" name="disability" value="e">Other
+
+<br>
+<br>
+Citizenship Id <input type="text" name="citizenship" >
+<br>
+<br>
+Issued Address  <br>
+District           <input type="text" name="district">
+<br>
+VDC/Municipality            <input type="text" name="vdc_municipality">
+<br>
+Ward No <input type="integer" name="ward_no">
+<br>
+<br>
+Citizenship Type <input type="text" name="citizenshiptype">
+<br>
+BirthDistrict <input type="text" name="birthdistrict">
+<br>
+Issue Date <input type="date" name="issuedate">
+<br>
+DOB <input type="date" name="dob">
+<br>
+<input type="submit" value="Register"/>
+
+
+</form>
+</body>
+</html>
+
+

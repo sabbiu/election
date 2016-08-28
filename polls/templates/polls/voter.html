@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VOTER REGISTRATION</title>
+</head>
+<body>
+<center>
+
+
+{% if check == 0 %}
+  <h1>Sucessfully submitted</h1>
+{%elif check == 1 %}
+  <h1>Error in one or more input</h1>
+{% endif %}
+
+
+
+<form action="{% url 'polls:voter'  %}" method="post">
+
+{% csrf_token %}
+Voter Id <input type="integer" name="voter_id">
+
+<br>
+<br>
+Name:  <input type="text" name="name" />
+<br>
+<br>
+Gender: <input type="radio" name="gender" value='M'>Male
+         <input type="radio" name="gender" value='F'>Female  
+<br>
+<br>
+Spouse Name:  <input type="text" name="spousename" />
+<br>
+<br>
+Father Name: <input type="text" name="fathername"/>
+<br>
+<br>
+GrandFather Name: <input type="text" name="gfathername"/>
+<br>
+<br>
+Mother Tongue: <input type="text" name="mothertongue"/>
+<br>
+<br>
+Mobile:<input type="text" name="mobile"/>
+<br>
+<br>
+Email: <input type="email" name="email"/>
+<br>
+<br>
+Literacy Status <input type="radio" name="literacystatus" value='Y'>Yes
+         <input type="radio" name="literacystatus" value='N'>No
+<br>
+<br> 
+Qualification <input type="text" name="qualification"/>
+<br>
+<br>
+<br>
+Permanent Address
+<br>
+<br>
+District           <input type="text" name="district">
+<br>
+<br>
+VDC/Municipality            <input type="text" name="vdc_municipality">
+<br>
+<br>
+Ward No <input type="text" name="ward_no">
+<br>
+<br>
+<br>
+ Disability  <input type="radio" name="disability" value="NULL">None
+         <input type="radio" name="disability" value="a">Visual Impaired
+          <input type="radio" name="disability" value="b">Hearing Impaired  
+ <input type="radio" name="disability" value="c">Speech Impaired
+         <input type="radio" name="disability" value="d">Amputee
+         <input type="radio" name="disability" value="e">Other
+
+<br>
+<br>
+<br>
+Citizenship Id <input type="text" name="citizenship" >
+<br>
+<br>
+<br>
+Issued Address  <br>
+<br>
+District           <input type="text" name="cdistrict">
+<br>
+<br>
+VDC/Municipality            <input type="text" name="cvdc_municipality">
+<br>
+<br>
+Ward No <input type="text" name="cward_no">
+<br>
+<br>
+<br>
+Citizenship Type <input type="text" name="citizenshiptype">
+<br>
+<br>
+BirthDistrict <input type="text" name="birthdistrict">
+<br>
+<br>
+Issue Date <input type="date" name="issuedate">
+<br>
+<br>
+DOB <input type="date" name="dob">
+<br>
+<br>
+<input type="submit" value="Register"/>
+
+
+</form>
+
+</center>
+
+</body>
+</html>
+
+

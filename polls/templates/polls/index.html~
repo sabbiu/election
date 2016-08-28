@@ -1,0 +1,9 @@
+{% if voter_list %}
+    <ul>
+    {% for voterInfo in voter_list %}
+        <li>{{voterInfo.name}} {{ voterInfo.voter_id}} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No voter_info are available.</p>
+{% endif %}

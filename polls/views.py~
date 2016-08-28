@@ -1,0 +1,63 @@
+from django.http import HttpResponse
+from django.template import loader
+from django.shortcuts import get_object_or_404, render
+from .models import VoterInfo
+from .models import Citizenship
+from .models import Address
+from .models import Disability
+from django.utils import timezone
+
+
+
+def index(request):
+    voter_list = VoterInfo.objects.all()
+    
+    context = {'voter_list': voter_list}
+    
+    return render(request, 'polls/index.html', context)
+
+
+
+def voter(request):
+
+    if request.method=='POST':
+       
+       
+       dis=request.POST['disability']
+       d=Disability.objects.get(disability_id=dis)
+
+       
+       x=request.POST['district']
+       y=request.POST['vdc_municipality']
+       z=request.POST['ward_no']
+       a=Address.objects.get(district=x)
+       
+      
+      
+       v=VoterInfo()
+       
+     
+       v.name=request.POST['name']
+       v.voter_id=request.POST['voter_id']
+       v.citizenship=c
+       v.gender=request.POST['gender']
+       v.spousename=request.POST['spousename']
+       v.fathername=request.POST['fathername']
+       v.gfathername=request.POST['gfathername']
+       v.mothertongue=request.POST['mothertongue']
+       v.mobile=request.POST['mobile']
+       v.email=request.POST['email']
+       v.literacystatus=request.POST['literacystatus']
+       v.qualification=request.POST['qualification']
+
+       v.address=a
+
+       v.disability=d
+       v.save()
+
+
+    return render(request, 'polls/voter.html')
+
+
+
+
